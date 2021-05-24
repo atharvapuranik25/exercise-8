@@ -1,0 +1,118 @@
+Exercise Set - III
+
+Run Rate
+
+READ teamA, teamB, overs, runsA, oversA, runsB, oversB
+netRunRateA = (runsA/oversA) - (runsB/overs)
+netRunRateB = (runsB/oversB) - (runsA/overs)
+IF netRunRateA > netRunRateB
+	WRITE teamA, netRunRateA
+	WRITE teamB, netRunRateB
+ELSE IF netRunRateA == netRunRateB
+	print "It's a tie."
+ELSE
+	WRITE teamB, netRunRateB
+	WRITE teamA, netRunRateA
+ENDIF
+
+Perfect Number
+
+READ nInt
+divisor = 1
+number = 2
+WHILE number < nInt + 1
+	sum = 0
+	WHILE divisor < number
+		IF number MOD divisor == 0
+			sum = sum + divisor
+		divisor = divisor + 1
+	IF number == sum
+		WRITE number "is perfect"
+	ELSE IF number < sum
+		WRITE number "is abundant"
+	ELSE
+		WRITE number "is deficient"
+	END IF
+	divisor = 1
+	number = number + 1
+
+
+Exercise Set - V
+
+Problem - I
+
+READ sentence
+sentenceList = SPLIT sentence
+WRITE sentenceList
+sentenceSet = SET sentenceList
+WRITE sentenceSet
+numUnique = LENGTH sentenceSet
+WRITE numUnique
+
+Problem - II
+
+READ sentenceDictionary
+WRITE sentenceDictionary
+numKeys = LENGTH sentenceDictionary
+WRITE numKeys
+containsBreathe = 'breathe' in sentenceDictionary 
+RETURN TRUE or FALSE
+WRITE containsBreathe
+sentenceList = LIST sentenceDictionary
+sortedKeys = SORTED sentenceList
+WRITE "1st element of" sortedKeys[0]
+WRITE "Element with highest value in list of keys" MAX sortedKeys
+
+
+Exercise Set - VI
+
+Problem - I
+
+DEFINE blackFriday
+	READ amount, prime
+	IF prime == yes
+		amountP = amount - (amount*0.15)
+	ELSE IF prime == no
+		amountP = amount
+	ELSE
+		print "Enter a valid input"
+	amountF = amountP - (amountP*0.08)
+	WRITE amountF
+CALL blackFriday
+
+Problem - II(a)
+
+DEFINE messageCharacter(string)
+	print string characters from  range [0:200]
+READ message
+CALL messageCharacter(message)
+
+Problem - II(b)
+
+DEFINE messageWord(string)
+	list = SPLIT string
+	list2 = elements of list from range [0:30]
+	string1 = JOIN list2
+READ message
+CALL messageWord(message)
+
+
+Exercise Set - VII
+
+READ roomType, days, food
+IF roomType == deluxe
+	gst = 0.18*food
+	cgst = sgst = gst/2
+	room = 7500*days
+	tip = 0.10*food
+	bill = room + food + gst + tip
+ELSE IF roomType == non ac
+	gst = 0.05*food
+	cgst = sgst = gst/2
+	room = 4500*days
+	tip = 0.10*food
+	bill = room + food + gst + tip
+ELSE
+	print "Enter a valid input."
+
+WRITE room, food, gst, cgst, sgst, tip, bill
